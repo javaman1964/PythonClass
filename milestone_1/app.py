@@ -40,21 +40,26 @@ def search_movies():
         print("Invalid value, exiting search...")
 
 
-print("Welcome to my movie app!!!")
-while True:
-    action = input("What do you want to do? Add a movie (A), Search for a movie (S), List Movies (L), Exit (X): ")
+def movie_fun():
+    print("Welcome to my movie app!!!")
+    while True:
+        action = input("What do you want to do? Add a movie (A), Search for a movie (S), List Movies (L), Exit (X): ")
 
-    if action.upper() == "X":
-        print("Thanks for playing, exiting")
-        break;
-    if action.upper() == "A":
-        movie = create_movie()
-        movies.append(movie)
-    elif action.upper() == "L":
-        list_movies()
-    elif action.upper() == "S":
-        movie = search_movies()
-    else:
-        print("ERROR: Invalid entry, try again")
+        if action.upper() == "X":
+            print("Thanks for playing, exiting")
+            break;
+        if action.upper() == "A":
+            movie = create_movie()
+            movies.append(movie)
+        elif action.upper() == "L":
+            list_movies()
+        elif action.upper() == "S":
+            movie = search_movies()
+        else:
+            print("ERROR: Invalid entry, try again")
+
+
+movie_fun()
+
 
 
