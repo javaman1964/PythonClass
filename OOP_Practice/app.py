@@ -22,3 +22,9 @@ print(nissan.cars)
 print(len(nissan))  # __len__
 print(nissan[0])  # __getitem__
 print(nissan)  # __str__
+
+# Output
+# ['Rogue', 'Titan']
+# 2
+# Rogue
+# Garage has 2 cars
