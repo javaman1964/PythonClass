@@ -14,7 +14,7 @@ def create_movie():
     year = input(f"What year did {name} premier?: " )
     director = input(f"Who directed {name}?: ")
     return {
-        "movie" : {name},
+        "name" : {name},
         "year" : {year},
         "director" : {director}
     }
@@ -22,22 +22,23 @@ def create_movie():
 def find_movie(name):
     print(name)
 
+
+def display_movie(movie):
+    print(f'Name: {movie[name]}, Director: {movie[director]}, Year: {movie[year]}')
+
+
 def list_movies():
     for movie in movies:
-        print(movie)
+        display_movie(movie)
+
 
 def search_movies():
-    action = input("What do you want to search for, Name of movie (N), Year (Y), Director (D), Exit (X)?: ")
-    if action.upper() == "X":
-        print("Exiting search...")
-    elif action.upper() == "N":
-        name = input("Enter the movie name: ")
-    elif action.upper() == "Y":
-        year = input("Enter the premier year: ")
-    elif action.upper() == "D":
-        director = input("Enter the directors name: ")
-    else:
-        print("Invalid value, exiting search...")
+    find_by = input("What do you want to search for Name, Year , Director , or Exit?: ")
+    if find_by.lower != "exit":
+        looking_for = input("What are you searching for?: ")
+        for movie in movies:
+            if movie[find_by.lower()] == looking_for:
+                display_movie(movie)
 
 
 def movie_fun():
@@ -49,8 +50,7 @@ def movie_fun():
             print("Thanks for playing, exiting")
             break;
         if action.upper() == "A":
-            movie = create_movie()
-            movies.append(movie)
+            movies.append(create_movie())
         elif action.upper() == "L":
             list_movies()
         elif action.upper() == "S":
